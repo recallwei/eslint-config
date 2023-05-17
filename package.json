@@ -1,21 +1,14 @@
 {
   "private": true,
-  "name": "app-name",
-  "version": "0.0.0",
-  "description": "",
+  "name": "eslint-config-monorepo",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
-  "keywords": [],
-  "homepage": "https://github.com/recallwei/project#readme",
-  "bugs": "https://github.com/recallwei/project/issues",
-  "repository": "github:recallwei/repo",
-  "files": [],
-  "main": "index.js",
-  "bin": {},
-  "config": {},
+  "homepage": "https://github.com/recallwei/eslint-config#readme",
+  "bugs": "https://github.com/recallwei/eslint-config/issues",
+  "repository": "github:recallwei/eslint-config",
   "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
   "packageManager": "pnpm@8.5.0",
   "engines": {
     "node": ">=18.15.0",

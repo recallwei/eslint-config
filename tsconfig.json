@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node"
+  },
+  "include": ["./packages/**/*.ts"],
+  "exclude": ["./__test__/**/*.*"]
+}
