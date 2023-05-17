@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "app-name",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
+  "keywords": [],
+  "homepage": "https://github.com/recallwei/project#readme",
+  "bugs": "https://github.com/recallwei/project/issues",
+  "repository": "github:recallwei/repo",
+  "files": [],
+  "main": "index.js",
+  "bin": {},
+  "config": {},
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "packageManager": "pnpm@8.5.0",
+  "engines": {
+    "node": ">=18.15.0",
+    "npm": ">=9.2.0"
+  },
+  "license": "MIT"
+}
