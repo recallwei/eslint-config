@@ -1,0 +1,27 @@
+{
+  "name": "app-name",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "javascript",
+    "typescript",
+    "react",
+    "vue"
+  ],
+  "homepage": "https://github.com/recallwei/eslint-config#readme",
+  "bugs": "https://github.com/recallwei/eslint-config/issues",
+  "repository": "github:recallwei/eslint-config",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "dependencies": {},
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "packageManager": "pnpm@8.5.0",
+  "license": "MIT"
+}

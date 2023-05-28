@@ -1,5 +1,9 @@
 # ESLint Config
 
+## Feature
+
+- [x] Based on [Airbnb JavaScript Style](https://github.com/airbnb/javascript)
+
 ## Usage
 
 ### Install
@@ -31,7 +35,6 @@ pnpm add -D eslint @bruce/eslint-config
 
 ```json
 {
-  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.eslint": true,
