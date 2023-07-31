@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
   "files": [
@@ -8,12 +8,22 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "eslint": "^8.46.0",
-    "eslint-define-config": "^1.22.0",
-    "local-pkg": "^0.4.3"
+    "eslint": ">=8.0.0"
   },
   "dependencies": {
-    "@brucesong/eslint-config-basic": "workspace:*"
+    "@brucesong/eslint-config-basic": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-define-config": "^1.22.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "local-pkg": "^0.4.3"
   },
   "packageManager": "pnpm@8.6.0",
   "license": "MIT"

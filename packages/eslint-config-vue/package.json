@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
   "files": [
@@ -8,13 +8,20 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "eslint": "^8.46.0",
-    "eslint-define-config": "^1.22.0",
-    "local-pkg": "^0.4.3"
+    "eslint": ">=8.0.0"
   },
   "dependencies": {
     "@brucesong/eslint-config-basic": "workspace:*",
-    "@brucesong/eslint-config-ts": "workspace:*"
+    "@brucesong/eslint-config-ts": "workspace:*",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint-define-config": "^1.22.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-vue": "^9.16.1",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.46.0",
+    "local-pkg": "^0.4.3"
   },
   "packageManager": "pnpm@8.6.0",
   "license": "MIT"
