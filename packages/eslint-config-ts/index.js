@@ -1,3 +1,6 @@
+const fs = require('node:fs')
+const { join } = require('node:path')
+const process = require('node:process')
 const basic = require('@brucesong/eslint-config-basic')
 
 const OFF = 0
@@ -35,10 +38,18 @@ module.exports = defineConfig({
       }
     }
   },
-  overrides: basic.overrides.concat([
-    {
-      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
-      parser: '@typescript-eslint/parser'
-    }
-  ])
+  overrides: basic.overrides.concat(
+    !fs.existsSync(join(process.cwd(), 'tsconfig.json'))
+      ? []
+      : [
+          {
+            files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+              tsconfigRootDir: process.cwd(),
+              project: 'tsconfig.json'
+            }
+          }
+        ]
+  )
 })
