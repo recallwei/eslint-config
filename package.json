@@ -7,7 +7,7 @@
   "repository": "github:recallwei/eslint-config",
   "scripts": {
     "version": "pnpm changeset version",
-    "release": "pnpm -r publish"
+    "release": "pnpm -r publish --access=public"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
