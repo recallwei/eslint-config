@@ -1,5 +1,5 @@
 {
-  "name": "@bruce/eslint-config-vue",
+  "name": "@brucesong/eslint-config-vue",
   "version": "1.0.0",
   "description": "Vue ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
@@ -13,8 +13,8 @@
     "local-pkg": "^0.4.3"
   },
   "dependencies": {
-    "@bruce/eslint-config-basic": "workspace:*",
-    "@bruce/eslint-config-ts": "workspace:*"
+    "@brucesong/eslint-config-basic": "workspace:*",
+    "@brucesong/eslint-config-ts": "workspace:*"
   },
   "packageManager": "pnpm@8.6.0",
   "license": "MIT"

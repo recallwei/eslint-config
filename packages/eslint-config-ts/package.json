@@ -1,5 +1,5 @@
 {
-  "name": "@bruce/eslint-config-ts",
+  "name": "@brucesong/eslint-config-ts",
   "version": "1.0.0",
   "description": "TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
@@ -13,7 +13,7 @@
     "local-pkg": "^0.4.3"
   },
   "dependencies": {
-    "@bruce/eslint-config-basic": "workspace:*"
+    "@brucesong/eslint-config-basic": "workspace:*"
   },
   "packageManager": "pnpm@8.6.0",
   "license": "MIT"

@@ -1,5 +1,5 @@
 {
-  "name": "@bruce/eslint-config-basic",
+  "name": "@brucesong/eslint-config-basic",
   "version": "1.0.0",
   "description": "Basic ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
