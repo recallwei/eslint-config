@@ -12,7 +12,7 @@ const { defineConfig } = require('eslint-define-config')
 
 module.exports = defineConfig({
   extends: [
-    '@bruce/eslint-config-basic',
+    '@brucesong/eslint-config-basic',
     'airbnb-typescript/base',
     'plugin:import/recommended',
     'plugin:import/typescript',

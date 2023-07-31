@@ -14,7 +14,7 @@ module.exports = defineConfig({
   extends: [
     'plugin:tailwindcss/recommended', // TailwindCSS 类名排序、简写合并
     'plugin:vue/vue3-recommended',
-    TS ? '@bruce/eslint-config-ts' : '@bruce/eslint-config-basic'
+    TS ? '@brucesong/eslint-config-ts' : '@brucesong/eslint-config-basic'
   ],
   rules: {
     'vue/no-v-html': OFF, // 允许使用 v-html

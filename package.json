@@ -6,7 +6,6 @@
   "bugs": "https://github.com/recallwei/eslint-config/issues",
   "repository": "github:recallwei/eslint-config",
   "scripts": {
-    "version": "pnpm changeset version",
     "release": "pnpm -r publish --access=public"
   },
   "devDependencies": {
