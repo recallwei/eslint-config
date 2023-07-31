@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-basic
 
+## 0.0.10
+
+### Patch Changes
+
+- Update.
+
 ## 0.0.9
 
 ### Patch Changes
