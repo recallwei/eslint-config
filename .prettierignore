@@ -1,0 +1,9 @@
+.cspell
+.husky
+.vscode
+node_modules
+build
+dist
+pnpm-lock.yaml
+
+*.json

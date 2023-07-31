@@ -1,7 +1,7 @@
 {
-  "name": "@bruce/eslint-config-basic",
+  "name": "@bruce/eslint-config-vue",
   "version": "0.0.1",
-  "description": "Basic ESLint configuration.",
+  "description": "Vue ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
   "files": [
     "index.js"
@@ -9,7 +9,12 @@
   "main": "index.js",
   "peerDependencies": {
     "eslint": "^8.46.0",
-    "eslint-define-config": "^1.22.0"
+    "eslint-define-config": "^1.22.0",
+    "local-pkg": "^0.4.3"
+  },
+  "dependencies": {
+    "@bruce/eslint-config-basic": "workspace:*",
+    "@bruce/eslint-config-ts": "workspace:*"
   },
   "packageManager": "pnpm@8.6.0",
   "license": "MIT"

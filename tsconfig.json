@@ -5,6 +5,10 @@
     "module": "ESNext",
     "moduleResolution": "node"
   },
-  "include": ["./packages/**/*.ts"],
-  "exclude": ["./__test__/**/*.*"]
+  "include": [
+    "./packages/**/*.ts"
+  ],
+  "exclude": [
+    "./__test__/**/*.*"
+  ]
 }
