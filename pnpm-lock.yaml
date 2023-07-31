@@ -71,7 +71,7 @@ importers:
 
   packages/eslint-config-ts:
     dependencies:
-      '@bruce/eslint-config-basic':
+      '@brucesong/eslint-config-basic':
         specifier: workspace:*
         version: link:../eslint-config-basic
       eslint:
@@ -86,10 +86,10 @@ importers:
 
   packages/eslint-config-vue:
     dependencies:
-      '@bruce/eslint-config-basic':
+      '@brucesong/eslint-config-basic':
         specifier: workspace:*
         version: link:../eslint-config-basic
-      '@bruce/eslint-config-ts':
+      '@brucesong/eslint-config-ts':
         specifier: workspace:*
         version: link:../eslint-config-ts
       eslint:
