@@ -1,5 +1,13 @@
 # @brucesong/eslint-config-ts
 
+## 0.0.9
+
+### Patch Changes
+
+- Update.
+- Updated dependencies
+  - @brucesong/eslint-config-basic@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

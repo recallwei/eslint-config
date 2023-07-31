@@ -29,6 +29,11 @@ module.exports = defineConfig({
       }
     }
   },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    tsconfigRootDir: process.cwd(),
+    project: true
+  },
   overrides: basic.overrides.concat(
     !fs.existsSync(join(process.cwd(), 'tsconfig.json'))
       ? []
