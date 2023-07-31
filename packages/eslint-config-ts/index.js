@@ -1,8 +1,4 @@
-const { isPackageExists } = require('local-pkg')
-
-const TS = isPackageExists('typescript')
-
-if (!TS) console.warn('[@bruce/eslint-config] TypeScript is not installed, fallback to JS only.')
+const basic = require('@brucesong/eslint-config-basic')
 
 const OFF = 0
 const WARN = 1
@@ -38,5 +34,11 @@ module.exports = defineConfig({
         alwaysTryTypes: true
       }
     }
-  }
+  },
+  overrides: basic.overrides.concat([
+    {
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+      parser: '@typescript-eslint/parser'
+    }
+  ])
 })

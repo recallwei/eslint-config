@@ -6,9 +6,11 @@
   "bugs": "https://github.com/recallwei/eslint-config/issues",
   "repository": "github:recallwei/eslint-config",
   "scripts": {
+    "eslint:check": "eslint \"**/*.{ts,tsx,js,tsx,vue}\" --color",
     "release": "pnpm -r publish --access=public"
   },
   "devDependencies": {
+    "@brucesong/eslint-config-basic": "workspace:^",
     "@changesets/cli": "^2.26.2",
     "eslint": "^8.46.0",
     "typescript": "^5.1.6"

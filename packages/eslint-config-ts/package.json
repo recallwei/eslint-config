@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-ts",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
   "files": [
@@ -22,8 +22,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.46.0",
-    "local-pkg": "^0.4.3"
+    "eslint": "^8.46.0"
   },
   "packageManager": "pnpm@8.6.0",
   "license": "MIT"

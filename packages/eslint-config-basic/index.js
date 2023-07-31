@@ -8,7 +8,8 @@ module.exports = defineConfig({
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
+    jest: true
   },
   reportUnusedDisableDirectives: true, // 报告未使用的 eslint-disable 指令
   extends: ['airbnb-base', 'plugin:import/recommended', 'plugin:import/errors', 'plugin:import/warnings', 'prettier'],
