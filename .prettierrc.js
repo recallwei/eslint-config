@@ -6,7 +6,7 @@ module.exports = {
   endOfLine: 'lf',
   htmlWhitespaceSensitivity: 'css',
   jsxSingleQuote: false,
-  printWidth: 120,
+  printWidth: 80,
   proseWrap: 'preserve',
   quoteProps: 'as-needed',
   semi: false,
@@ -14,6 +14,5 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   trailingComma: 'none',
-  useTabs: false,
-  vueIndentScriptAndStyle: false
+  useTabs: false
 }

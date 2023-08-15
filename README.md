@@ -9,14 +9,14 @@
 ### Install
 
 ```bash
-pnpm add -D eslint @brucesong/eslint-config-vue
+pnpm add -D eslint @brucesong/eslint-config-xxx
 ```
 
 ### Config `.eslintrc.json`
 
 ```json
 {
-  "extends": "@brucesong/eslint-config-vue"
+  "extends": "@brucesong/eslint-config-xxx"
 }
 ```
 
