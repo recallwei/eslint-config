@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 0.0.4
+
+### Patch Changes
+
+- 17cb6fe: Enable using `/// <reference path="" />` in .d.ts
+
 ## 0.0.3
 
 ### Patch Changes
