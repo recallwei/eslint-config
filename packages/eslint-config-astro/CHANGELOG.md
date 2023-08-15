@@ -4,34 +4,34 @@
 
 ### Patch Changes
 
-- b8e045e: Disable `consistent-return` rule for .astro
+- b8e045e: disable `consistent-return` rule for .astro
 
 ## 0.0.5
 
 ### Patch Changes
 
-- ab8b91d: Add TailwindCSS related rules.
+- ab8b91d: add TailwindCSS related rules
 
 ## 0.0.4
 
 ### Patch Changes
 
-- 17cb6fe: Enable using `/// <reference path="" />` in .d.ts
+- 17cb6fe: enable using `/// <reference path="" />` in .d.ts
 
 ## 0.0.3
 
 ### Patch Changes
 
-- Remove vue related plugins.
+- remove vue related plugins
 
 ## 0.0.2
 
 ### Patch Changes
 
-- Use Dependencies instead of Devdependencies.
+- use Dependencies instead of Devdependencies
 
 ## 0.0.1
 
 ### Patch Changes
 
-- Init Astro + React + TypeScript ESlint Config.
+- init Astro + React + TypeScript ESlint Config
