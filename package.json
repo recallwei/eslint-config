@@ -6,8 +6,7 @@
   "bugs": "https://github.com/recallwei/eslint-config/issues",
   "repository": "github:recallwei/eslint-config",
   "scripts": {
-    "eslint:check": "eslint \"**/*.{ts,tsx,js,tsx,vue}\" --color",
-    "release": "pnpm -r publish --access=public"
+    "eslint:check": "eslint \"**/*.{ts,tsx,js,tsx,vue}\" --color"
   },
   "devDependencies": {
     "@brucesong/eslint-config-basic": "workspace:^",

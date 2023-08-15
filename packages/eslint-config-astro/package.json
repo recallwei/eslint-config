@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-astro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Astro + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "files": [
@@ -11,7 +11,7 @@
     "eslint": ">=7.4.0",
     "typescript": ">=3.9"
   },
-  "devDependencies": {
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "astro-eslint-parser": "^0.14.0",
