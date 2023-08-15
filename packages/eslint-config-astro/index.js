@@ -16,10 +16,15 @@ module.exports = defineConfig({
     'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:vue/vue3-recommended',
     'prettier'
   ],
-  plugins: ['@typescript-eslint', 'react', 'simple-import-sort', 'import', 'unused-imports'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'simple-import-sort',
+    'import',
+    'unused-imports'
+  ],
   parserOptions: {
     project: 'tsconfig.eslint.json',
     ecmaVersion: 'latest',
@@ -100,7 +105,13 @@ module.exports = defineConfig({
       'error',
       {
         props: true,
-        ignorePropertyModificationsFor: ['target', 'descriptor', 'req', 'request', 'args']
+        ignorePropertyModificationsFor: [
+          'target',
+          'descriptor',
+          'req',
+          'request',
+          'args'
+        ]
       }
     ],
 
