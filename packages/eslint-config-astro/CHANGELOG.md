@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 0.0.6
+
+### Patch Changes
+
+- b8e045e: Disable `consistent-return` rule for .astro
+
 ## 0.0.5
 
 ### Patch Changes
