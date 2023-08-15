@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 0.0.7
+
+### Patch Changes
+
+- b0f1635: add .cjs, .mjs extension for files in /scripts dir
+
 ## 0.0.6
 
 ### Patch Changes
