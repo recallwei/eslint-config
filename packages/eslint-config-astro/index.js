@@ -32,7 +32,7 @@ module.exports = defineConfig({
   },
   overrides: [
     {
-      files: ['*.{js,mjs,cjs}'],
+      files: ['*.{js,cjs,mjs}'],
       extends: ['plugin:@typescript-eslint/disable-type-checked'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off'
@@ -60,7 +60,7 @@ module.exports = defineConfig({
       }
     },
     {
-      files: ['scripts/*.{js,ts}'],
+      files: ['scripts/*.{js,cjs,mjs,ts}'],
       rules: {
         'no-console': 'off' // 允许在脚本中使用 console
       }
