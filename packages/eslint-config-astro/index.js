@@ -41,7 +41,8 @@ module.exports = defineConfig({
     {
       files: ['*.d.ts'],
       rules: {
-        'import/no-duplicates': 'off'
+        'import/no-duplicates': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off' // 允许使用 /// <reference path="" />
       }
     },
     {
