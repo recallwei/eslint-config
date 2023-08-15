@@ -140,6 +140,11 @@ module.exports = defineConfig({
     'import/no-self-import': 'error', // 禁止自导入
     'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
 
+    // TailwindCSS
+    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
+    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
+    'tailwindcss/no-custom-classname': 'off', // TailwindCSS 中允许自定义类名
+
     // React
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
