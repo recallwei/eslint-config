@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 0.0.5
+
+### Patch Changes
+
+- ab8b91d: Add TailwindCSS related rules.
+
 ## 0.0.4
 
 ### Patch Changes
