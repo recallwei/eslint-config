@@ -77,13 +77,8 @@ module.exports = defineConfig({
         Astro: 'readonly'
       },
       rules: {
-        'import/no-unresolved': [
-          'error',
-          {
-            ignore: ['@/*', 'astro:content', '~icons/*']
-          }
-        ],
-        'react/jsx-filename-extension': [1, { extensions: ['.astro'] }]
+        'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
+        'consistent-return': 'off' // TODO: How to return on the top level of Astro component
       }
     }
   ],
