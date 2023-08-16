@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 0.0.10
+
+### Patch Changes
+
+- 7325955: fix tsconfig path bug
+
 ## 0.0.9
 
 ### Patch Changes
