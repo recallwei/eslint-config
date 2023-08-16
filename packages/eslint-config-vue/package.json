@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
   "repository": {

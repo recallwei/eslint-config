@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-basic
 
+## 1.0.1
+
+### Patch Changes
+
+- b1efd0d: add ts rule
+
 ## 1.0.0
 
 ### Major Changes
