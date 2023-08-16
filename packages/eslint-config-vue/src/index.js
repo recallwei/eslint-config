@@ -29,11 +29,11 @@ module.exports = defineConfig({
     'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:vue/vue3-recommended',
     'prettier'
   ],
   plugins: [
     '@typescript-eslint',
-    'react',
     'simple-import-sort',
     'import',
     'unused-imports'
@@ -50,7 +50,7 @@ module.exports = defineConfig({
           '.mts',
           '.tsx',
           '.d.ts',
-          '.astro'
+          '.vue'
         ]
       }
     }
@@ -93,27 +93,55 @@ module.exports = defineConfig({
         }
       }
     ]),
-    ...(isTSExist && [
-      {
-        files: ['*.astro'],
-        parser: 'astro-eslint-parser',
-        parserOptions: {
-          parser: '@typescript-eslint/parser',
-          extraFileExtensions: ['.astro'],
-          project: [tsconfig],
-          tsconfigRootDir: process.cwd(),
-          ecmaVersion: 'latest',
-          sourceType: 'module'
-        },
-        globals: {
-          Astro: 'readonly'
-        },
-        rules: {
-          'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
-          'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
-        }
-      }
-    ])
+    ...(isTSExist
+      ? [
+          {
+            files: ['*.vue'],
+            parser: 'vue-eslint-parser',
+            parserOptions: {
+              parser: '@typescript-eslint/parser',
+              extraFileExtensions: ['.vue'],
+              project: [tsconfig],
+              tsconfigRootDir: process.cwd(),
+              ecmaVersion: 'latest',
+              sourceType: 'module'
+            },
+            rules: {
+              'no-unused-vars': 'off',
+              '@typescript-eslint/no-unused-vars': 'off',
+              'no-shadow': 'off',
+              '@typescript-eslint/no-shadow': 'error',
+              'no-undef': 'off',
+              '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+              '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+              '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+
+              'vue/no-v-html': 'off', // 允许使用 v-html
+              'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
+              'vue/component-tags-order': [
+                'error',
+                {
+                  order: ['script', 'template', 'style']
+                }
+              ] // 优先 script，其次 template，最后 style
+            }
+          }
+        ]
+      : [
+          {
+            files: ['*.vue'],
+            rules: {
+              'vue/no-v-html': 'off', // 允许使用 v-html
+              'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
+              'vue/component-tags-order': [
+                'error',
+                {
+                  order: ['script', 'template', 'style']
+                }
+              ] // 优先 script，其次 template，最后 style
+            }
+          }
+        ])
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
@@ -171,11 +199,6 @@ module.exports = defineConfig({
     // TailwindCSS
     'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
     'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
-    'tailwindcss/no-custom-classname': 'off', // TailwindCSS 中允许自定义类名
-
-    // React
-    'react/destructuring-assignment': 'off',
-    'react/require-default-props': 'off',
-    'react/jsx-props-no-spreading': 'off'
+    'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
   }
 })

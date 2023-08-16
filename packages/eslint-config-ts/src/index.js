@@ -20,7 +20,6 @@ module.exports = defineConfig({
   },
   reportUnusedDisableDirectives: true,
   extends: [
-    'plugin:tailwindcss/recommended',
     'eslint:recommended',
     'airbnb-base',
     'airbnb-typescript/base',
@@ -33,7 +32,6 @@ module.exports = defineConfig({
   ],
   plugins: [
     '@typescript-eslint',
-    'react',
     'simple-import-sort',
     'import',
     'unused-imports'
@@ -49,8 +47,7 @@ module.exports = defineConfig({
           '.cts',
           '.mts',
           '.tsx',
-          '.d.ts',
-          '.astro'
+          '.d.ts'
         ]
       }
     }
@@ -90,27 +87,6 @@ module.exports = defineConfig({
           '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
           '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
           '@typescript-eslint/consistent-type-imports': 'error' // 强制使用 import type
-        }
-      }
-    ]),
-    ...(isTSExist && [
-      {
-        files: ['*.astro'],
-        parser: 'astro-eslint-parser',
-        parserOptions: {
-          parser: '@typescript-eslint/parser',
-          extraFileExtensions: ['.astro'],
-          project: [tsconfig],
-          tsconfigRootDir: process.cwd(),
-          ecmaVersion: 'latest',
-          sourceType: 'module'
-        },
-        globals: {
-          Astro: 'readonly'
-        },
-        rules: {
-          'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
-          'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
         }
       }
     ])
@@ -166,16 +142,6 @@ module.exports = defineConfig({
     ], // 允许 devDependencies，peerDependencies，不允许 optionalDependencies
     'import/no-mutable-exports': 'error', // 禁止导出 let, var 声明的变量
     'import/no-self-import': 'error', // 禁止自导入
-    'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
-
-    // TailwindCSS
-    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
-    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
-    'tailwindcss/no-custom-classname': 'off', // TailwindCSS 中允许自定义类名
-
-    // React
-    'react/destructuring-assignment': 'off',
-    'react/require-default-props': 'off',
-    'react/jsx-props-no-spreading': 'off'
+    'import/prefer-default-export': 'off' // 仅导出一个变量时，不要求默认导出
   }
 })
