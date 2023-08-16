@@ -89,7 +89,8 @@ module.exports = defineConfig({
           'no-undef': 'off',
           '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
           '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-          '@typescript-eslint/consistent-type-imports': 'error' // 强制使用 import type
+          '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+          '@typescript-eslint/triple-slash-reference': 'off'
         }
       }
     ]),
