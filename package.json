@@ -3,8 +3,6 @@
   "private": true,
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "homepage": "https://github.com/recallwei/eslint-config#readme",
-  "bugs": "https://github.com/recallwei/eslint-config/issues",
-  "repository": "github:recallwei/eslint-config",
   "scripts": {
     "eslint:check": "eslint \"**/*.{ts,tsx,js,tsx,vue}\" --color"
   },
@@ -12,7 +10,7 @@
     "@brucesong/eslint-config-basic": "workspace:^",
     "@changesets/cli": "^2.26.2",
     "eslint": "^8.47.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "typescript": "^5.1.6"
   },
   "packageManager": "pnpm@8.6.0",
