@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 0.0.8
+
+### Patch Changes
+
+- e064fc2: support auto find and customize tsconfig
+
 ## 0.0.7
 
 ### Patch Changes
