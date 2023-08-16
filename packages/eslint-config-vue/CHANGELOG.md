@@ -1,5 +1,13 @@
 # @brucesong/eslint-config-vue
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated dependencies [1c7bfe6]
+  - @brucesong/eslint-config-basic@0.0.14
+  - @brucesong/eslint-config-ts@0.0.14
+
 ## 0.0.13
 
 ### Patch Changes

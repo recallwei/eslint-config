@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-basic
 
+## 0.0.14
+
+### Patch Changes
+
+- 1c7bfe6: update rules
+
 ## 0.0.13
 
 ### Patch Changes
