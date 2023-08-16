@@ -4,8 +4,9 @@ const { defineConfig } = require('eslint-define-config')
 
 const tsconfig =
   process.env.ESLINT_TSCONFIG ||
-  fs.existsSync(join(process.cwd(), 'tsconfig.eslint.json')) ||
-  'tsconfig.json'
+  (fs.existsSync(join(process.cwd(), 'tsconfig.eslint.json'))
+    ? 'tsconfig.eslint.json'
+    : 'tsconfig.json')
 
 const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
