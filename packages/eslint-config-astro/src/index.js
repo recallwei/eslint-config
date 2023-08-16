@@ -10,11 +10,14 @@ const tsconfig =
 const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
 module.exports = defineConfig({
+  root: true,
   env: {
     node: true,
     browser: true,
+    commonjs: true,
     es2023: true
   },
+  reportUnusedDisableDirectives: true,
   extends: [
     'plugin:tailwindcss/recommended',
     'eslint:recommended',
@@ -34,12 +37,30 @@ module.exports = defineConfig({
     'import',
     'unused-imports'
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: [
+          '.js',
+          '.cjs',
+          '.mjs',
+          '.ts',
+          '.cts',
+          '.mts',
+          '.tsx',
+          '.d.ts',
+          'astro'
+        ]
+      }
+    }
+  },
   overrides: [
     {
-      files: ['*.{js,cjs,mjs}'],
+      files: ['*.{js,cjs,mjs,jsx}'],
       extends: ['plugin:@typescript-eslint/disable-type-checked'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off'
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-require-imports': 'off'
       }
     },
     {
