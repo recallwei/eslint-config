@@ -1,5 +1,3 @@
 {
-  "extends": [
-    "@brucesong/eslint-config-basic"
-  ]
+  "extends": "@brucesong/eslint-config-basic"
 }
