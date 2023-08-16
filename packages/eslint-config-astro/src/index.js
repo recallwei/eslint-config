@@ -1,13 +1,22 @@
+const fs = require('node:fs')
+const { join } = require('node:path')
 const { defineConfig } = require('eslint-define-config')
+
+const tsconfig =
+  process.env.ESLINT_TSCONFIG ||
+  fs.existsSync(join(process.cwd(), 'tsconfig.eslint.json')) ||
+  'tsconfig.json'
+
+const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
 module.exports = defineConfig({
   env: {
     node: true,
-    es2023: true,
-    browser: true
+    browser: true,
+    es2023: true
   },
   extends: [
-    'plugin:tailwindcss/recommended', // TailwindCSS 类名排序、简写合并
+    'plugin:tailwindcss/recommended',
     'eslint:recommended',
     'airbnb-base',
     'airbnb-typescript/base',
@@ -25,11 +34,6 @@ module.exports = defineConfig({
     'import',
     'unused-imports'
   ],
-  parserOptions: {
-    project: 'tsconfig.eslint.json',
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  },
   overrides: [
     {
       files: ['*.{js,cjs,mjs}'],
@@ -45,42 +49,49 @@ module.exports = defineConfig({
         '@typescript-eslint/triple-slash-reference': 'off' // 允许使用 /// <reference path="" />
       }
     },
-    {
-      files: ['*.{ts,tsx}'],
-      parser: '@typescript-eslint/parser',
-      rules: {
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-        'no-shadow': 'off',
-        '@typescript-eslint/no-shadow': 'error',
-        'no-undef': 'off',
-        '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
-        '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-        '@typescript-eslint/consistent-type-imports': 'error' // 强制使用 import type
-      }
-    },
-    {
-      files: ['scripts/*.{js,cjs,mjs,ts}'],
-      rules: {
-        'no-console': 'off' // 允许在脚本中使用 console
-      }
-    },
-    {
-      files: ['*.astro'],
-      parser: 'astro-eslint-parser',
-      parserOptions: {
+    ...(isTSExist && [
+      {
+        files: ['*.{ts,tsx,cts,mts}'],
         parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
-        project: 'tsconfig.eslint.json'
-      },
-      globals: {
-        Astro: 'readonly'
-      },
-      rules: {
-        'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
-        'consistent-return': 'off' // TODO: How to return on the top level of Astro component
+        parserOptions: {
+          project: [tsconfig],
+          tsconfigRootDir: process.cwd(),
+          ecmaVersion: 'latest',
+          sourceType: 'module'
+        },
+        rules: {
+          'no-unused-vars': 'off',
+          '@typescript-eslint/no-unused-vars': 'off',
+          'no-shadow': 'off',
+          '@typescript-eslint/no-shadow': 'error',
+          'no-undef': 'off',
+          '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+          '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+          '@typescript-eslint/consistent-type-imports': 'error' // 强制使用 import type
+        }
       }
-    }
+    ]),
+    ...(isTSExist && [
+      {
+        files: ['*.astro'],
+        parser: 'astro-eslint-parser',
+        parserOptions: {
+          parser: '@typescript-eslint/parser',
+          extraFileExtensions: ['.astro'],
+          project: [tsconfig],
+          tsconfigRootDir: process.cwd(),
+          ecmaVersion: 'latest',
+          sourceType: 'module'
+        },
+        globals: {
+          Astro: 'readonly'
+        },
+        rules: {
+          'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
+          'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
+        }
+      }
+    ])
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
