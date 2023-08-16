@@ -3,5 +3,7 @@
   "language": "en",
   "words": [],
   "flagWords": [],
-  "ignorePaths": ["*"]
+  "ignorePaths": [
+    "*"
+  ]
 }

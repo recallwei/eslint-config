@@ -1,8 +1,17 @@
 # ESLint Config
 
+This project is managed and released based on monorepo (pnpm workspace and changesets).  
+See the publish guide [here](./DEVELOPMENT.md).
+
 ## Feature
 
 - [x] Based on [Airbnb JavaScript Style](https://github.com/airbnb/javascript)
+- [x] Auto sort `import` and `export`
+- [x] Support multiple frameworks
+  - [ ] React
+  - [x] Vue
+  - [x] Astro
+  - [ ] TypeScript
 
 ## Usage
 
