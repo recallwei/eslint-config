@@ -135,6 +135,12 @@ module.exports = defineConfig({
           {
             files: ['*.vue'],
             extends: ['plugin:@typescript-eslint/disable-type-checked'],
+            parser: 'vue-eslint-parser',
+            parserOptions: {
+              extraFileExtensions: ['.vue'],
+              ecmaVersion: 'latest',
+              sourceType: 'module'
+            },
             rules: {
               'vue/no-v-html': 'off', // 允许使用 v-html
               'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
