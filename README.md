@@ -8,10 +8,12 @@ See the publish guide [here](./DEVELOPMENT.md).
 - [x] Based on [Airbnb JavaScript Style](https://github.com/airbnb/javascript)
 - [x] Auto sort `import` and `export`
 - [x] Support multiple frameworks
+  - [x] JavaScript
+  - [x] TypeScript
   - [ ] React
   - [x] Vue
   - [x] Astro
-  - [ ] TypeScript
+  - [x] Docusaurus
 
 ## Usage
 
