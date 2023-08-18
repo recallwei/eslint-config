@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.6
+
+### Patch Changes
+
+- 0baca30: fix vue parser bug
+
 ## 1.0.5
 
 ### Patch Changes
