@@ -97,29 +97,25 @@ module.exports = defineConfig({
           }
         ]
       : []),
-    ...(isTSExist
-      ? [
-          {
-            files: ['*.astro'],
-            parser: 'astro-eslint-parser',
-            parserOptions: {
-              parser: '@typescript-eslint/parser',
-              extraFileExtensions: ['.astro'],
-              project: [tsconfig],
-              tsconfigRootDir: process.cwd(),
-              ecmaVersion: 'latest',
-              sourceType: 'module'
-            },
-            globals: {
-              Astro: 'readonly'
-            },
-            rules: {
-              'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
-              'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
-            }
-          }
-        ]
-      : [])
+    {
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+        project: [tsconfig],
+        tsconfigRootDir: process.cwd(),
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      },
+      globals: {
+        Astro: 'readonly'
+      },
+      rules: {
+        'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
+        'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
+      }
+    }
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号

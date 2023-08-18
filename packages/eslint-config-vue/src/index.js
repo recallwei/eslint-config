@@ -96,63 +96,39 @@ module.exports = defineConfig({
           }
         ]
       : []),
-    ...(isTSExist
-      ? [
-          {
-            files: ['*.vue'],
-            parser: 'vue-eslint-parser',
-            parserOptions: {
-              parser: '@typescript-eslint/parser',
-              extraFileExtensions: ['.vue'],
-              project: [tsconfig],
-              tsconfigRootDir: process.cwd(),
-              ecmaVersion: 'latest',
-              sourceType: 'module'
-            },
-            rules: {
-              'no-unused-vars': 'off',
-              '@typescript-eslint/no-unused-vars': 'off',
-              'no-shadow': 'off',
-              '@typescript-eslint/no-shadow': 'error',
-              'no-undef': 'off',
-              '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
-              '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-              '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
-              '@typescript-eslint/triple-slash-reference': 'off',
 
-              'vue/no-v-html': 'off', // 允许使用 v-html
-              'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
-              'vue/component-tags-order': [
-                'error',
-                {
-                  order: ['script', 'template', 'style']
-                }
-              ] // 优先 script，其次 template，最后 style
-            }
-          }
-        ]
-      : [
+    {
+      files: ['*.vue'],
+      parser: 'vue-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.vue'],
+        project: [tsconfig],
+        tsconfigRootDir: process.cwd(),
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      },
+      rules: {
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        'no-shadow': 'off',
+        '@typescript-eslint/no-shadow': 'error',
+        'no-undef': 'off',
+        '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+        '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+        '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+        '@typescript-eslint/triple-slash-reference': 'off',
+
+        'vue/no-v-html': 'off', // 允许使用 v-html
+        'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
+        'vue/component-tags-order': [
+          'error',
           {
-            files: ['*.vue'],
-            extends: ['plugin:@typescript-eslint/disable-type-checked'],
-            parser: 'vue-eslint-parser',
-            parserOptions: {
-              extraFileExtensions: ['.vue'],
-              ecmaVersion: 'latest',
-              sourceType: 'module'
-            },
-            rules: {
-              'vue/no-v-html': 'off', // 允许使用 v-html
-              'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
-              'vue/component-tags-order': [
-                'error',
-                {
-                  order: ['script', 'template', 'style']
-                }
-              ] // 优先 script，其次 template，最后 style
-            }
+            order: ['script', 'template', 'style']
           }
-        ])
+        ] // 优先 script，其次 template，最后 style
+      }
+    }
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
