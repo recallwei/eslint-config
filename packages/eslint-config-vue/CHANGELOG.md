@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.4
+
+### Patch Changes
+
+- 43a0d82: add vue parser for .js
+
 ## 1.0.3
 
 ### Patch Changes
