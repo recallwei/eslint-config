@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-ts
 
+## 1.0.3
+
+### Patch Changes
+
+- 7e83d2f: add ts ignore rules for .js
+
 ## 1.0.2
 
 ### Patch Changes
