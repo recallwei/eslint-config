@@ -71,29 +71,31 @@ module.exports = defineConfig({
         '@typescript-eslint/triple-slash-reference': 'off' // 允许使用 /// <reference path="" />
       }
     },
-    ...(isTSExist && [
-      {
-        files: ['*.{ts,tsx,cts,mts}'],
-        parser: '@typescript-eslint/parser',
-        parserOptions: {
-          project: [tsconfig],
-          tsconfigRootDir: process.cwd(),
-          ecmaVersion: 'latest',
-          sourceType: 'module'
-        },
-        rules: {
-          'no-unused-vars': 'off',
-          '@typescript-eslint/no-unused-vars': 'off',
-          'no-shadow': 'off',
-          '@typescript-eslint/no-shadow': 'error',
-          'no-undef': 'off',
-          '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
-          '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-          '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
-          '@typescript-eslint/triple-slash-reference': 'off'
-        }
-      }
-    ]),
+    ...(isTSExist
+      ? [
+          {
+            files: ['*.{ts,tsx,cts,mts}'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+              project: [tsconfig],
+              tsconfigRootDir: process.cwd(),
+              ecmaVersion: 'latest',
+              sourceType: 'module'
+            },
+            rules: {
+              'no-unused-vars': 'off',
+              '@typescript-eslint/no-unused-vars': 'off',
+              'no-shadow': 'off',
+              '@typescript-eslint/no-shadow': 'error',
+              'no-undef': 'off',
+              '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+              '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+              '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+              '@typescript-eslint/triple-slash-reference': 'off'
+            }
+          }
+        ]
+      : []),
     ...(isTSExist
       ? [
           {
@@ -132,6 +134,7 @@ module.exports = defineConfig({
       : [
           {
             files: ['*.vue'],
+            extends: ['plugin:@typescript-eslint/disable-type-checked'],
             rules: {
               'vue/no-v-html': 'off', // 允许使用 v-html
               'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
