@@ -1,0 +1,45 @@
+{
+  "name": "@brucesong/eslint-config-docusaurus",
+  "version": "0.0.0",
+  "description": "Docusaurus + React + TypeScript ESLint configuration.",
+  "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/recallwei/eslint-config.git",
+    "directory": "packages/eslint-config-docusaurus"
+  },
+  "homepage": "https://github.com/recallwei/eslint-config",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-config-docusaurus",
+    "docusaurus",
+    "react",
+    "typescript"
+  ],
+  "files": [
+    "src/*"
+  ],
+  "main": "src/index.js",
+  "peerDependencies": {
+    "eslint": ">=7.4.0",
+    "typescript": ">=3.9"
+  },
+  "dependencies": {
+    "@docusaurus/eslint-plugin": "^2.4.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-define-config": "^1.23.0",
+    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0"
+  },
+  "license": "MIT"
+}
