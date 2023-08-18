@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-astro",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Astro + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "astro-eslint-parser": "^0.14.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-define-config": "^1.23.0",

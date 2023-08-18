@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.2
+
+### Patch Changes
+
+- aae101d: fix non-ts bug
+
 ## 1.0.1
 
 ### Patch Changes
