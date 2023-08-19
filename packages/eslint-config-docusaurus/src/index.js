@@ -87,6 +87,14 @@ module.exports = defineConfig({
               '@typescript-eslint/no-unused-vars': 'off',
               'no-shadow': 'off',
               '@typescript-eslint/no-shadow': 'error',
+              'no-use-before-define': 'off',
+              '@typescript-eslint/no-use-before-define': [
+                'error',
+                {
+                  functions: false,
+                  classes: false
+                }
+              ],
               'no-undef': 'off',
               '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
               '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
@@ -138,14 +146,7 @@ module.exports = defineConfig({
     'import/no-absolute-path': 'off', // 允许导入绝对路径
     'import/no-duplicates': 'error', // 禁止重复导入
     'import/extensions': 'off', // 允许导入时带文件扩展名
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-        peerDependencies: true,
-        optionalDependencies: false
-      }
-    ], // 允许 devDependencies，peerDependencies，不允许 optionalDependencies
+    'import/no-extraneous-dependencies': 'off', // TODO: Docusaurus swizzle 可能会用到没有使用的依赖
     'import/no-mutable-exports': 'error', // 禁止导出 let, var 声明的变量
     'import/no-self-import': 'error', // 禁止自导入
     'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
@@ -153,6 +154,19 @@ module.exports = defineConfig({
     // React
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+    'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
+    'react/no-unstable-nested-components': [
+      'error',
+      {
+        allowAsProps: true,
+        customValidators: []
+      }
+    ],
+
+    // JSX a11y
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off'
   }
 })

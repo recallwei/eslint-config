@@ -88,6 +88,14 @@ module.exports = defineConfig({
               '@typescript-eslint/no-unused-vars': 'off',
               'no-shadow': 'off',
               '@typescript-eslint/no-shadow': 'error',
+              'no-use-before-define': 'off',
+              '@typescript-eslint/no-use-before-define': [
+                'error',
+                {
+                  functions: false,
+                  classes: false
+                }
+              ],
               'no-undef': 'off',
               '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
               '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
@@ -178,6 +186,19 @@ module.exports = defineConfig({
     // React
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+    'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
+    'react/no-unstable-nested-components': [
+      'error',
+      {
+        allowAsProps: true,
+        customValidators: []
+      }
+    ],
+
+    // JSX a11y
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off'
   }
 })

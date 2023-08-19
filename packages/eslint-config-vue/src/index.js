@@ -96,6 +96,14 @@ module.exports = defineConfig({
               '@typescript-eslint/no-unused-vars': 'off',
               'no-shadow': 'off',
               '@typescript-eslint/no-shadow': 'error',
+              'no-use-before-define': 'off',
+              '@typescript-eslint/no-use-before-define': [
+                'error',
+                {
+                  functions: false,
+                  classes: false
+                }
+              ],
               'no-undef': 'off',
               '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
               '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
@@ -113,6 +121,14 @@ module.exports = defineConfig({
         '@typescript-eslint/no-unused-vars': 'off',
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': 'error',
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': [
+          'error',
+          {
+            functions: false,
+            classes: false
+          }
+        ],
         'no-undef': 'off',
         '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
         '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
