@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-ts
 
+## 1.0.4
+
+### Patch Changes
+
+- e2ce84d: add rules for react and typescript
+
 ## 1.0.3
 
 ### Patch Changes

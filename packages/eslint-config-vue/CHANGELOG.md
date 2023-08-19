@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.7
+
+### Patch Changes
+
+- e2ce84d: add rules for react and typescript
+
 ## 1.0.6
 
 ### Patch Changes
