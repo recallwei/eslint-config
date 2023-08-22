@@ -2,7 +2,7 @@
   "name": "@brucesong/eslint-config-basic",
   "version": "1.0.3",
   "description": "Basic JavaScript ESLint configuration.",
-  "author": "Bruce Song <recall4056@gmail.com> (https://github.com/eslint-config/)",
+  "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/recallwei/eslint-config.git",
