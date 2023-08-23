@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-basic
 
+## 1.0.4
+
+### Patch Changes
+
+- 909a6ee: adjust ts override rules
+
 ## 1.0.3
 
 ### Patch Changes

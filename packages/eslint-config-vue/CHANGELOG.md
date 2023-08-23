@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.8
+
+### Patch Changes
+
+- 909a6ee: adjust ts override rules
+
 ## 1.0.7
 
 ### Patch Changes

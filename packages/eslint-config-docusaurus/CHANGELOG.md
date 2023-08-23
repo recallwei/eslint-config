@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-docusaurus
 
+## 1.0.1
+
+### Patch Changes
+
+- 909a6ee: adjust ts override rules
+
 ## 1.0.0
 
 ### Major Changes

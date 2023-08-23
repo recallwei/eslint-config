@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.6
+
+### Patch Changes
+
+- 909a6ee: adjust ts override rules
+
 ## 1.0.5
 
 ### Patch Changes
