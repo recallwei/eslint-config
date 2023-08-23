@@ -2,12 +2,12 @@
   "name": "@bruce/eslint-config",
   "private": true,
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
-  "homepage": "https://github.com/recallwei/eslint-config#readme",
+  "homepage": "https://github.com/recallwei/project-config#readme",
   "scripts": {
     "eslint:check": "eslint \"**/*.{ts,tsx,js,tsx,vue}\" --color"
   },
   "devDependencies": {
-    "@brucesong/eslint-config-basic": "workspace:^",
+    "@brucesong/eslint-config-basic": "workspace:*",
     "@changesets/cli": "^2.26.2",
     "eslint": "^8.47.0",
     "prettier": "^3.0.2",

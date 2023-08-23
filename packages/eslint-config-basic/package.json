@@ -1,14 +1,14 @@
 {
   "name": "@brucesong/eslint-config-basic",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Basic JavaScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/recallwei/eslint-config.git",
+    "url": "https://github.com/recallwei/project-config.git",
     "directory": "packages/eslint-config-basic"
   },
-  "homepage": "https://github.com/recallwei/eslint-config",
+  "homepage": "https://github.com/recallwei/project-config",
   "keywords": [
     "eslint",
     "eslint-config",
