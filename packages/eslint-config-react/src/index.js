@@ -10,8 +10,6 @@ const tsconfig =
 
 const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
-const tsconfigRootDir = process.cwd()
-
 module.exports = defineConfig({
   root: true,
   env: {
@@ -22,20 +20,21 @@ module.exports = defineConfig({
   },
   reportUnusedDisableDirectives: true,
   extends: [
-    'plugin:tailwindcss/recommended',
+    'plugin:@docusaurus/recommended',
     'eslint:recommended',
-    'airbnb-base',
+    'airbnb',
+    'airbnb/hooks',
     'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:vue/vue3-recommended',
     'prettier'
   ],
   plugins: [
     '@typescript-eslint',
+    'react',
     'simple-import-sort',
     'import',
     'unused-imports'
@@ -51,8 +50,7 @@ module.exports = defineConfig({
           '.cts',
           '.mts',
           '.tsx',
-          '.d.ts',
-          '.vue'
+          '.d.ts'
         ]
       }
     }
@@ -69,7 +67,8 @@ module.exports = defineConfig({
     {
       files: ['*.d.ts'],
       rules: {
-        'import/no-duplicates': 'off'
+        'import/no-duplicates': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off' // 允许使用 /// <reference path="" />
       }
     },
     ...(isTSExist
@@ -79,36 +78,47 @@ module.exports = defineConfig({
             parser: '@typescript-eslint/parser',
             parserOptions: {
               project: [tsconfig],
-              tsconfigRootDir,
+              tsconfigRootDir: process.cwd(),
               ecmaVersion: 'latest',
               sourceType: 'module'
             },
             rules: {
-              'no-undef': 'off'
+              'no-unused-vars': 'off',
+              '@typescript-eslint/no-unused-vars': 'off',
+              'no-shadow': 'off',
+              '@typescript-eslint/no-shadow': 'error',
+              'no-use-before-define': 'off',
+              '@typescript-eslint/no-use-before-define': [
+                'error',
+                {
+                  functions: false,
+                  classes: false
+                }
+              ],
+              'no-undef': 'off',
+              '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+              '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+              '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+              '@typescript-eslint/triple-slash-reference': 'off'
             }
           }
         ]
-      : []),
-    {
-      files: ['*.vue'],
-      parser: 'vue-eslint-parser',
-      parserOptions: {
-        project: 'tsconfig.eslint.json',
-        tsconfigRootDir,
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.vue'],
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-      },
-      rules: {
-        'no-undef': 'off'
-      }
-    }
+      : [])
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
     semi: ['error', 'never'], // 禁止使用分号
     'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_'
+      }
+    ],
     'class-methods-use-this': 'off', // 允许类方法不使用 this
     'no-param-reassign': [
       'error',
@@ -124,18 +134,6 @@ module.exports = defineConfig({
       }
     ],
 
-    // eslint-plugin-unused-imports
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      {
-        vars: 'all',
-        varsIgnorePattern: '^_',
-        args: 'after-used',
-        argsIgnorePattern: '^_'
-      }
-    ],
-
     // eslint-plugin-simple-import-sort
     'simple-import-sort/imports': 'error', // import 排序
     'simple-import-sort/exports': 'error', // export 排序
@@ -148,44 +146,27 @@ module.exports = defineConfig({
     'import/no-absolute-path': 'off', // 允许导入绝对路径
     'import/no-duplicates': 'error', // 禁止重复导入
     'import/extensions': 'off', // 允许导入时带文件扩展名
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-        peerDependencies: true,
-        optionalDependencies: false
-      }
-    ], // 允许 devDependencies，peerDependencies，不允许 optionalDependencies
+    'import/no-extraneous-dependencies': 'off', // TODO: Docusaurus swizzle 可能会用到没有使用的依赖
     'import/no-mutable-exports': 'error', // 禁止导出 let, var 声明的变量
     'import/no-self-import': 'error', // 禁止自导入
     'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
 
-    // typescript-eslint
-    '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
-    '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-    '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
-    '@typescript-eslint/triple-slash-reference': 'off', // 允许使用 /// <reference path="" />
-    '@typescript-eslint/no-use-before-define': [
+    // React
+    'react/destructuring-assignment': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+    'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
+    'react/no-unstable-nested-components': [
       'error',
       {
-        functions: false,
-        classes: false
+        allowAsProps: true,
+        customValidators: []
       }
     ],
 
-    // vue
-    'vue/no-v-html': 'off', // 允许使用 v-html
-    'vue/multi-word-component-names': 'off', // 允许单个单词的组件名，例如 index.vue
-    'vue/component-tags-order': [
-      'error',
-      {
-        order: ['script', 'template', 'style']
-      }
-    ], // 优先 script，其次 template，最后 style
-
-    // tailwindcss
-    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
-    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
-    'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
+    // JSX a11y
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off'
   }
 })

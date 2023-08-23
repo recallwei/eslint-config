@@ -10,6 +10,8 @@ const tsconfig =
 
 const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
+const tsconfigRootDir = process.cwd()
+
 module.exports = defineConfig({
   root: true,
   env: {
@@ -64,56 +66,31 @@ module.exports = defineConfig({
     {
       files: ['*.d.ts'],
       rules: {
-        'import/no-duplicates': 'off',
-        '@typescript-eslint/triple-slash-reference': 'off' // 允许使用 /// <reference path="" />
+        'import/no-duplicates': 'off'
       }
     },
-    ...(isTSExist && [
-      {
-        files: ['*.{ts,tsx,cts,mts}'],
-        parser: '@typescript-eslint/parser',
-        parserOptions: {
-          project: [tsconfig],
-          tsconfigRootDir: process.cwd(),
-          ecmaVersion: 'latest',
-          sourceType: 'module'
-        },
-        rules: {
-          'no-unused-vars': 'off',
-          '@typescript-eslint/no-unused-vars': 'off',
-          'no-shadow': 'off',
-          '@typescript-eslint/no-shadow': 'error',
-          'no-use-before-define': 'off',
-          '@typescript-eslint/no-use-before-define': [
-            'error',
-            {
-              functions: false,
-              classes: false
+    ...(isTSExist
+      ? [
+          {
+            files: ['*.{ts,tsx,cts,mts}'],
+            parser: '@typescript-eslint/parser',
+            parserOptions: {
+              project: [tsconfig],
+              tsconfigRootDir,
+              ecmaVersion: 'latest',
+              sourceType: 'module'
+            },
+            rules: {
+              'no-undef': 'off'
             }
-          ],
-          'no-undef': 'off',
-          '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
-          '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-          '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
-          '@typescript-eslint/triple-slash-reference': 'off'
-        }
-      }
-    ])
+          }
+        ]
+      : [])
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
     semi: ['error', 'never'], // 禁止使用分号
     'no-unused-vars': 'off',
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      {
-        vars: 'all',
-        varsIgnorePattern: '^_',
-        args: 'after-used',
-        argsIgnorePattern: '^_'
-      }
-    ],
     'class-methods-use-this': 'off', // 允许类方法不使用 this
     'no-param-reassign': [
       'error',
@@ -126,6 +103,18 @@ module.exports = defineConfig({
           'request',
           'args'
         ]
+      }
+    ],
+
+    // eslint-plugin-unused-imports
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_'
       }
     ],
 
@@ -151,6 +140,19 @@ module.exports = defineConfig({
     ], // 允许 devDependencies，peerDependencies，不允许 optionalDependencies
     'import/no-mutable-exports': 'error', // 禁止导出 let, var 声明的变量
     'import/no-self-import': 'error', // 禁止自导入
-    'import/prefer-default-export': 'off' // 仅导出一个变量时，不要求默认导出
+    'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
+
+    // typescript-eslint
+    '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+    '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+    '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+    '@typescript-eslint/triple-slash-reference': 'off', // 允许使用 /// <reference path="" />
+    '@typescript-eslint/no-use-before-define': [
+      'error',
+      {
+        functions: false,
+        classes: false
+      }
+    ]
   }
 })

@@ -10,6 +10,8 @@ const tsconfig =
 
 const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
+const tsconfigRootDir = process.cwd()
+
 module.exports = defineConfig({
   root: true,
   env: {
@@ -68,8 +70,7 @@ module.exports = defineConfig({
     {
       files: ['*.d.ts'],
       rules: {
-        'import/no-duplicates': 'off',
-        '@typescript-eslint/triple-slash-reference': 'off' // 允许使用 /// <reference path="" />
+        'import/no-duplicates': 'off'
       }
     },
     ...(isTSExist
@@ -79,28 +80,12 @@ module.exports = defineConfig({
             parser: '@typescript-eslint/parser',
             parserOptions: {
               project: [tsconfig],
-              tsconfigRootDir: process.cwd(),
+              tsconfigRootDir,
               ecmaVersion: 'latest',
               sourceType: 'module'
             },
             rules: {
-              'no-unused-vars': 'off',
-              '@typescript-eslint/no-unused-vars': 'off',
-              'no-shadow': 'off',
-              '@typescript-eslint/no-shadow': 'error',
-              'no-use-before-define': 'off',
-              '@typescript-eslint/no-use-before-define': [
-                'error',
-                {
-                  functions: false,
-                  classes: false
-                }
-              ],
-              'no-undef': 'off',
-              '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
-              '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
-              '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
-              '@typescript-eslint/triple-slash-reference': 'off'
+              'no-undef': 'off'
             }
           }
         ]
@@ -112,7 +97,7 @@ module.exports = defineConfig({
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.astro'],
         project: [tsconfig],
-        tsconfigRootDir: process.cwd(),
+        tsconfigRootDir,
         ecmaVersion: 'latest',
         sourceType: 'module'
       },
@@ -129,16 +114,6 @@ module.exports = defineConfig({
     quotes: ['error', 'single'], // 强制使用单引号
     semi: ['error', 'never'], // 禁止使用分号
     'no-unused-vars': 'off',
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      {
-        vars: 'all',
-        varsIgnorePattern: '^_',
-        args: 'after-used',
-        argsIgnorePattern: '^_'
-      }
-    ],
     'class-methods-use-this': 'off', // 允许类方法不使用 this
     'no-param-reassign': [
       'error',
@@ -151,6 +126,18 @@ module.exports = defineConfig({
           'request',
           'args'
         ]
+      }
+    ],
+
+    // eslint-plugin-unused-imports
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_'
       }
     ],
 
@@ -178,12 +165,20 @@ module.exports = defineConfig({
     'import/no-self-import': 'error', // 禁止自导入
     'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
 
-    // TailwindCSS
-    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
-    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
-    'tailwindcss/no-custom-classname': 'off', // TailwindCSS 中允许自定义类名
+    // typescript-eslint
+    '@typescript-eslint/no-explicit-any': 'off', // 由 TS 静态检查
+    '@typescript-eslint/comma-dangle': 'off', // 由 Prettier 处理
+    '@typescript-eslint/consistent-type-imports': 'error', // 强制使用 import type
+    '@typescript-eslint/triple-slash-reference': 'off', // 允许使用 /// <reference path="" />
+    '@typescript-eslint/no-use-before-define': [
+      'error',
+      {
+        functions: false,
+        classes: false
+      }
+    ],
 
-    // React
+    // react
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -197,8 +192,13 @@ module.exports = defineConfig({
       }
     ],
 
-    // JSX a11y
+    // jsx-a11y
     'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off'
+    'jsx-a11y/no-static-element-interactions': 'off',
+
+    // tailwindcss
+    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
+    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
+    'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
   }
 })

@@ -25,29 +25,10 @@ module.exports = defineConfig({
       }
     }
   },
-  overrides: [
-    {
-      files: ['*.{js,cjs,mjs,jsx}'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/no-require-imports': 'off'
-      }
-    }
-  ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
     semi: ['error', 'never'], // 禁止使用分号
     'no-unused-vars': 'off',
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      {
-        vars: 'all',
-        varsIgnorePattern: '^_',
-        args: 'after-used',
-        argsIgnorePattern: '^_'
-      }
-    ],
     'class-methods-use-this': 'off', // 允许类方法不使用 this
     'no-param-reassign': [
       'error',
@@ -60,6 +41,18 @@ module.exports = defineConfig({
           'request',
           'args'
         ]
+      }
+    ],
+
+    // eslint-plugin-unused-imports
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_'
       }
     ],
 
