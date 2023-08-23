@@ -10,7 +10,7 @@ See the publish guide [here](./DEVELOPMENT.md).
 - [x] Support multiple frameworks
   - [x] JavaScript
   - [x] TypeScript
-  - [ ] React
+  - [x] React
   - [x] Vue
   - [x] Astro
   - [x] Docusaurus
