@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.9
+
+### Patch Changes
+
+- fix tsconfig project
+
 ## 1.0.8
 
 ### Patch Changes

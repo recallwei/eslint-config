@@ -93,7 +93,7 @@ module.exports = defineConfig({
       files: ['*.vue'],
       parser: 'vue-eslint-parser',
       parserOptions: {
-        project: 'tsconfig.eslint.json',
+        project: [tsconfig],
         tsconfigRootDir,
         parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.vue'],
