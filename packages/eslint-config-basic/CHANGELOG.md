@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-basic
 
+## 1.0.6
+
+### Patch Changes
+
+- disable react-a11y
+
 ## 1.0.5
 
 ### Patch Changes

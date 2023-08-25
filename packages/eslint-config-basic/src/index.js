@@ -31,7 +31,7 @@ module.exports = defineConfig({
     'no-unused-vars': 'off',
     'class-methods-use-this': 'off', // 允许类方法不使用 this
     'no-param-reassign': [
-      'error',
+      'warn',
       {
         props: true,
         ignorePropertyModificationsFor: [
@@ -42,7 +42,7 @@ module.exports = defineConfig({
           'args'
         ]
       }
-    ],
+    ], // 允许修改函数参数，但是会有警告
 
     // eslint-plugin-unused-imports
     'unused-imports/no-unused-imports': 'error',

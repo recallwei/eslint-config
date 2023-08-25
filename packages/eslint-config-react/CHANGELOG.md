@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react
 
+## 1.0.7
+
+### Patch Changes
+
+- disable react-a11y
+
 ## 1.0.6
 
 ### Patch Changes

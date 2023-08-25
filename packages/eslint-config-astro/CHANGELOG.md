@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.10
+
+### Patch Changes
+
+- disable react-a11y
+
 ## 1.0.9
 
 ### Patch Changes

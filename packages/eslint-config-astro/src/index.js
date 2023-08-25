@@ -12,6 +12,14 @@ const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
 const tsconfigRootDir = process.cwd()
 
+const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce(
+  (acc, rule) => {
+    acc[`jsx-a11y/${rule}`] = 'off'
+    return acc
+  },
+  {}
+)
+
 module.exports = defineConfig({
   root: true,
   env: {
@@ -119,7 +127,7 @@ module.exports = defineConfig({
     'no-unused-vars': 'off',
     'class-methods-use-this': 'off', // 允许类方法不使用 this
     'no-param-reassign': [
-      'error',
+      'warn',
       {
         props: true,
         ignorePropertyModificationsFor: [
@@ -130,7 +138,7 @@ module.exports = defineConfig({
           'args'
         ]
       }
-    ],
+    ], // 允许修改函数参数，但是会有警告
 
     // eslint-plugin-unused-imports
     'unused-imports/no-unused-imports': 'error',
@@ -203,6 +211,9 @@ module.exports = defineConfig({
       'warn',
       { allowConstantExport: true }
     ],
+
+    // jsx-a11y
+    ...a11yOff, // 禁用所有 jsx-a11y 规则
 
     // tailwindcss
     'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
