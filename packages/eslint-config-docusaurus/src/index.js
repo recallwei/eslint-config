@@ -27,7 +27,9 @@ module.exports = defineConfig({
     'airbnb',
     'airbnb/hooks',
     'airbnb-typescript/base',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
@@ -37,6 +39,7 @@ module.exports = defineConfig({
   plugins: [
     '@typescript-eslint',
     'react',
+    'react-refresh',
     'simple-import-sort',
     'import',
     'unused-imports'
@@ -154,6 +157,8 @@ module.exports = defineConfig({
     // react
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
+    'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
@@ -165,8 +170,10 @@ module.exports = defineConfig({
       }
     ],
 
-    // jsx-a11y
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off'
+    // react-refresh
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true }
+    ]
   }
 })

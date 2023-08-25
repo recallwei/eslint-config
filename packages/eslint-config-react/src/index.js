@@ -179,10 +179,6 @@ module.exports = defineConfig({
       { allowConstantExport: true }
     ],
 
-    // jsx-a11y
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
-
     // tailwindcss
     'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
     'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并

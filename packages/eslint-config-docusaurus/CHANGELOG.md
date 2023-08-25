@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-docusaurus
 
+## 1.0.3
+
+### Patch Changes
+
+- remove react-a11y
+
 ## 1.0.2
 
 ### Patch Changes
