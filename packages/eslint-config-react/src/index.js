@@ -164,6 +164,7 @@ module.exports = defineConfig({
     'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }], // 允许使用 <></> 包裹表达式，如 <>{children}</>
     'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
     'react/no-unstable-nested-components': [
       'error',

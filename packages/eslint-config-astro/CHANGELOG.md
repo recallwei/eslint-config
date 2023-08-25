@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.9
+
+### Patch Changes
+
+- add rule: react/jsx-no-useless-fragment
+
 ## 1.0.8
 
 ### Patch Changes
