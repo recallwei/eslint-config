@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React + TypeScript + TailwindCSS ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {

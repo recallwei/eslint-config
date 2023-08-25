@@ -39,6 +39,7 @@ module.exports = defineConfig({
   plugins: [
     '@typescript-eslint',
     'react',
+    'react-refresh',
     'simple-import-sort',
     'import',
     'unused-imports'
