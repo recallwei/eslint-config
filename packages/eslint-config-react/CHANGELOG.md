@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react
 
+## 1.0.3
+
+### Patch Changes
+
+- add rules for react jsx
+
 ## 1.0.2
 
 ### Patch Changes

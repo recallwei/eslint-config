@@ -159,6 +159,8 @@ module.exports = defineConfig({
     // react
     'react/destructuring-assignment': 'off',
     'react/require-default-props': 'off',
+    'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
+    'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
