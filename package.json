@@ -3,14 +3,14 @@
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "homepage": "https://github.com/recallwei/project-config#readme",
   "scripts": {
-    "eslint:check": "eslint \"**/*.{ts,tsx,js,tsx,vue}\" --color"
+    "eslint:check": "eslint \"**/*.{ts,tsx,js,jsx,vue}\" --color"
   },
   "devDependencies": {
     "@brucesong/eslint-config-basic": "workspace:*",
     "@changesets/cli": "^2.26.2",
     "eslint": "^8.47.0",
     "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "packageManager": "pnpm@8.6.0",
   "engines": {
