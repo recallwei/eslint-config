@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.12
+
+### Patch Changes
+
+- hoist vue parser instead of using it in override
+
 ## 1.0.11
 
 ### Patch Changes

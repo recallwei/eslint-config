@@ -57,6 +57,15 @@ module.exports = defineConfig({
       }
     }
   },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    project: [tsconfig],
+    tsconfigRootDir,
+    parser: '@typescript-eslint/parser',
+    extraFileExtensions: ['.vue'],
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
   overrides: [
     {
       files: ['*.{js,cjs,mjs,jsx}'],
@@ -76,13 +85,6 @@ module.exports = defineConfig({
       ? [
           {
             files: ['*.{ts,tsx,cts,mts}'],
-            parser: '@typescript-eslint/parser',
-            parserOptions: {
-              project: [tsconfig],
-              tsconfigRootDir,
-              ecmaVersion: 'latest',
-              sourceType: 'module'
-            },
             rules: {
               'no-undef': 'off'
             }
@@ -91,15 +93,6 @@ module.exports = defineConfig({
       : []),
     {
       files: ['*.vue'],
-      parser: 'vue-eslint-parser',
-      parserOptions: {
-        project: [tsconfig],
-        tsconfigRootDir,
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.vue'],
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-      },
       rules: {
         'no-undef': 'off'
       }

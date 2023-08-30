@@ -3,7 +3,9 @@
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "homepage": "https://github.com/recallwei/project-config#readme",
   "scripts": {
-    "eslint:check": "eslint \"**/*.{ts,tsx,js,jsx,vue}\" --color"
+    "eslint:check": "eslint \"**/*.{ts,tsx,js,jsx,vue}\" --color",
+    "prettier:check": "prettier --check --ignore-unknown .",
+    "prettier:fix": "prettier --write --ignore-unknown ."
   },
   "devDependencies": {
     "@brucesong/eslint-config-basic": "workspace:*",
