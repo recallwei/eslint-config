@@ -2,16 +2,27 @@
   "name": "@bruce/eslint-config",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "homepage": "https://github.com/recallwei/project-config#readme",
+  "bugs": "https://github.com/recallwei/project-config/issues",
+  "repository": "github:recallwei/project-config",
   "scripts": {
+    "cspell:check": "cspell \"**\"",
     "eslint:check": "eslint \"**/*.{ts,tsx,js,jsx,vue}\" --color",
+    "eslint:fix": "pnpm eslint:check --fix",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "prettier:fix": "prettier --write --ignore-unknown ."
+    "prettier:fix": "prettier --write --ignore-unknown .",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@brucesong/eslint-config-basic": "workspace:*",
     "@changesets/cli": "^2.26.2",
-    "eslint": "^8.47.0",
-    "prettier": "^3.0.2",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "cspell": "^7.2.0",
+    "eslint": "^8.48.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
   "packageManager": "pnpm@8.6.0",

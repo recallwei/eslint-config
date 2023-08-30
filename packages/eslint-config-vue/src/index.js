@@ -57,6 +57,9 @@ module.exports = defineConfig({
       }
     }
   },
+  /**
+   * NOTE: `vue-eslint-parser` doesn't work in `overrides`.
+   */
   parser: 'vue-eslint-parser',
   parserOptions: {
     project: [tsconfig],

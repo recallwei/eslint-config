@@ -17,6 +17,10 @@ See the publish guide [here](./DEVELOPMENT.md).
   - [x] Astro
   - [x] Docusaurus
 
+### TSConfig
+
+TODO...
+
 ## License
 
 [MIT](/LICENSE) License &copy; 2023 [Bruce Song](https://github.com/recallwei)

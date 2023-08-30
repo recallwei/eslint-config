@@ -23,7 +23,7 @@ And select which type of changeset it is.
 pnpm changeset version
 ```
 
-## Publish pakcages
+## Publish packages
 
 ```bash
 pnpm changeset publish
