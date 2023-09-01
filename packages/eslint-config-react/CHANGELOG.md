@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react
 
+## 1.0.8
+
+### Patch Changes
+
+- update react related rules
+
 ## 1.0.7
 
 ### Patch Changes

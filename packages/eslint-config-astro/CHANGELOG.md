@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.11
+
+### Patch Changes
+
+- update react related rules
+
 ## 1.0.10
 
 ### Patch Changes

@@ -166,12 +166,13 @@ module.exports = defineConfig({
     ],
 
     // react
-    'react/destructuring-assignment': 'off',
+    'react/destructuring-assignment': 'off', // 允许使用解构赋值
+    'react/prop-types': 'off', // 不必校验 props
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
     'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
+    'react/jsx-props-no-spreading': 'off', // 允许使用 ... 扩展 props
+    'react/jsx-filename-extension': ['warn', { extensions: ['jsx', '.tsx'] }], // JSX 文件使用 .jsx 或 .tsx 扩展名
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }], // 允许使用 <></> 包裹表达式，如 <>{children}</>
     'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
     'react/no-unstable-nested-components': [

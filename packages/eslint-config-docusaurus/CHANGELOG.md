@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-docusaurus
 
+## 1.0.6
+
+### Patch Changes
+
+- update react related rules
+
 ## 1.0.5
 
 ### Patch Changes
