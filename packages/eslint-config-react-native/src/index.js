@@ -26,7 +26,8 @@ module.exports = defineConfig({
     node: true,
     browser: true,
     commonjs: true,
-    es2023: true
+    es2023: true,
+    'react-native/react-native': true
   },
   reportUnusedDisableDirectives: true,
   extends: [
