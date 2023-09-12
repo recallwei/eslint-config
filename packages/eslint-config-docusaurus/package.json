@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-docusaurus",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Docusaurus + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {

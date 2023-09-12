@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-vue",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Vue + TypeScript + TailwindCSS ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
