@@ -47,7 +47,6 @@ module.exports = defineConfig({
     '@typescript-eslint',
     'react',
     'react-native',
-    '@react-native',
     'react-refresh',
     'simple-import-sort',
     'import',
