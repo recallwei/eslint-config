@@ -5,10 +5,10 @@
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/recallwei/project-config.git",
+    "url": "https://github.com/recallwei/eslint-config.git",
     "directory": "packages/eslint-config-ts"
   },
-  "homepage": "https://github.com/recallwei/project-config",
+  "homepage": "https://github.com/recallwei/eslint-config",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -24,8 +24,8 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.4.1",
-    "@typescript-eslint/parser": "^6.4.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",

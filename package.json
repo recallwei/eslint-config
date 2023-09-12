@@ -1,9 +1,9 @@
 {
   "name": "@bruce/eslint-config",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
-  "homepage": "https://github.com/recallwei/project-config#readme",
-  "bugs": "https://github.com/recallwei/project-config/issues",
-  "repository": "github:recallwei/project-config",
+  "homepage": "https://github.com/recallwei/eslint-config#readme",
+  "bugs": "https://github.com/recallwei/eslint-config/issues",
+  "repository": "github:recallwei/eslint-config",
   "scripts": {
     "cspell:check": "cspell \"**\"",
     "eslint:check": "eslint \"**/*.{ts,tsx,js,jsx,vue}\" --color",

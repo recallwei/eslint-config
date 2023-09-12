@@ -13,6 +13,7 @@ See the publish guide [here](./DEVELOPMENT.md).
   - [x] JavaScript
   - [x] TypeScript
   - [x] React
+  - [x] React Native
   - [x] Vue
   - [x] Astro
   - [x] Docusaurus

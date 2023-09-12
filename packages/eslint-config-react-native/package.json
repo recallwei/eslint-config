@@ -1,20 +1,20 @@
 {
-  "name": "@brucesong/eslint-config-docusaurus",
-  "version": "1.0.6",
-  "description": "Docusaurus + React + TypeScript ESLint configuration.",
+  "name": "@brucesong/eslint-config-react-native",
+  "version": "0.0.1",
+  "description": "React Native + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
     "type": "git",
     "url": "https://github.com/recallwei/eslint-config.git",
-    "directory": "packages/eslint-config-docusaurus"
+    "directory": "packages/eslint-config-react-native"
   },
   "homepage": "https://github.com/recallwei/eslint-config",
   "keywords": [
     "eslint",
     "eslint-config",
-    "eslint-config-docusaurus",
-    "docusaurus",
+    "eslint-config-react-native",
     "react",
+    "react-native",
     "typescript"
   ],
   "files": [
@@ -26,7 +26,9 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@docusaurus/eslint-plugin": "^2.4.1",
+    "@babel/core": "^7.22.17",
+    "@babel/eslint-parser": "^7.22.15",
+    "@react-native/eslint-plugin": "^0.73.0",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -35,9 +37,10 @@
     "eslint-define-config": "^1.23.0",
     "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.1.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0"
