@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react-native
 
+## 0.0.6
+
+### Patch Changes
+
+- remove env flag
+
 ## 0.0.5
 
 ### Patch Changes
