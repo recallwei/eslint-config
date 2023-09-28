@@ -116,6 +116,7 @@ module.exports = defineConfig({
         Astro: 'readonly'
       },
       rules: {
+        'react/no-unknown-property': 'off', // .astro 中无须校验未知属性
         'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
         'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
       }
@@ -206,7 +207,6 @@ module.exports = defineConfig({
         customValidators: []
       }
     ],
-    'react/no-unknown-property': ['error', { ignore: ['class'] }], // 在 .astro 中允许使用 class 属性
     // react-refresh
     'react-refresh/only-export-components': [
       'warn',
