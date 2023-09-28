@@ -206,7 +206,7 @@ module.exports = defineConfig({
         customValidators: []
       }
     ],
-
+    'react/no-unknown-property': ['error', { ignore: ['class'] }], // 在 .astro 中允许使用 class 属性
     // react-refresh
     'react-refresh/only-export-components': [
       'warn',
