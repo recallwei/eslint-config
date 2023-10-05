@@ -33,8 +33,8 @@ module.exports = defineConfig({
     'plugin:tailwindcss/recommended',
     'eslint:recommended',
     'airbnb',
+    'airbnb-typescript',
     'airbnb/hooks',
-    'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
@@ -168,7 +168,7 @@ module.exports = defineConfig({
     // react
     'react/destructuring-assignment': 'off', // 允许使用解构赋值
     'react/prop-types': 'off', // 不必校验 props
-    'react/require-default-props': 'off',
+    'react/require-default-props': 'off', // 不必要求默认 props
     'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
     'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
     'react/jsx-props-no-spreading': 'off', // 允许使用 ... 扩展 props

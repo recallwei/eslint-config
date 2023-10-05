@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-react-native",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React Native + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -26,14 +26,14 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@react-native/eslint-plugin": "^0.73.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
+    "@react-native/eslint-plugin": "^0.73.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-define-config": "^1.23.0",
-    "eslint-import-resolver-typescript": "^3.6.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "^7.33.2",
