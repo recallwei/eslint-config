@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react-native
 
+## 0.0.9
+
+### Patch Changes
+
+- add simple sort rules
+
 ## 0.0.8
 
 ### Patch Changes

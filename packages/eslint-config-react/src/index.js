@@ -36,8 +36,8 @@ module.exports = defineConfig({
     'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
-    // 'plugin:@typescript-eslint/recommended-type-checked',
-    // 'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
@@ -132,6 +132,10 @@ module.exports = defineConfig({
         argsIgnorePattern: '^_'
       }
     ],
+
+    // eslint-plugin-simple-import-sort
+    'simple-import-sort/imports': 'error', // import 排序
+    'simple-import-sort/exports': 'error', // export 排序
 
     // eslint-plugin-import
     'import/order': 'off', // 禁用 import 排序，使用 simple-import-sort

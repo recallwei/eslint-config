@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react
 
+## 1.0.12
+
+### Patch Changes
+
+- add simple sort rules
+
 ## 1.0.11
 
 ### Patch Changes
