@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react
 
+## 1.0.13
+
+### Patch Changes
+
+- add eslint-config-next and update deps
+
 ## 1.0.12
 
 ### Patch Changes

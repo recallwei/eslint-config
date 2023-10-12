@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-vue",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Vue + TypeScript + TailwindCSS ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -25,19 +25,19 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "@typescript-eslint/parser": "^6.7.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-define-config": "^1.23.0",
+    "eslint-define-config": "^1.24.1",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "eslint-plugin-vue": "^9.17.0",
-    "vue-eslint-parser": "^9.3.1"
+    "vue-eslint-parser": "^9.3.2"
   },
   "license": "MIT"
 }

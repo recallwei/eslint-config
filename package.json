@@ -5,6 +5,9 @@
   "bugs": "https://github.com/recallwei/eslint-config/issues",
   "repository": "github:recallwei/eslint-config",
   "scripts": {
+    "release:generate": "pnpm changeset",
+    "release:version": "pnpm changeset version",
+    "release:publish": "pnpm changeset publish",
     "cspell:check": "cspell \"**\"",
     "eslint:check": "eslint \"**/*.{ts,tsx,js,jsx,vue}\" --color",
     "eslint:fix": "pnpm eslint:check --fix",
@@ -22,7 +25,7 @@
     "commitizen": "^4.3.0",
     "cspell": "^7.3.7",
     "cz-git": "^1.7.1",
-    "eslint": "^8.50.0",
+    "eslint": "^8.51.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",

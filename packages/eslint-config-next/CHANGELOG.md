@@ -1,0 +1,7 @@
+# @brucesong/eslint-config-next
+
+## 0.0.1
+
+### Patch Changes
+
+- add eslint-config-next and update deps

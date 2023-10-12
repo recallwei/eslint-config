@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.15
+
+### Patch Changes
+
+- add eslint-config-next and update deps
+
 ## 1.0.14
 
 ### Patch Changes

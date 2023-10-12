@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react-native
 
+## 0.0.10
+
+### Patch Changes
+
+- add eslint-config-next and update deps
+
 ## 0.0.9
 
 ### Patch Changes

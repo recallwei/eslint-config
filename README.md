@@ -5,22 +5,18 @@ See the publish guide [here](./DEVELOPMENT.md).
 
 ## Features
 
-### ESLint
-
 - [x] Based on [Airbnb JavaScript Style](https://github.com/airbnb/javascript)
 - [x] Auto sort `import` and `export`
+- [x] Tailwind CSS auto sort
 - [x] Support multiple frameworks
   - [x] JavaScript
   - [x] TypeScript
   - [x] React
   - [x] React Native
   - [x] Vue
+  - [x] Next.js
   - [x] Astro
   - [x] Docusaurus
-
-### TSConfig
-
-TODO...
 
 ## License
 

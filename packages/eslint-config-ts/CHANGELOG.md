@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-ts
 
+## 1.0.11
+
+### Patch Changes
+
+- add eslint-config-next and update deps
+
 ## 1.0.10
 
 ### Patch Changes

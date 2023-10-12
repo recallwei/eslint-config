@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-docusaurus
 
+## 1.0.8
+
+### Patch Changes
+
+- add eslint-config-next and update deps
+
 ## 1.0.7
 
 ### Patch Changes
