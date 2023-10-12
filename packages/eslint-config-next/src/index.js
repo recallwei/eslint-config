@@ -49,7 +49,6 @@ module.exports = defineConfig({
   plugins: [
     '@typescript-eslint',
     'react',
-    'react-refresh',
     'simple-import-sort',
     'import',
     'unused-imports'
@@ -187,12 +186,6 @@ module.exports = defineConfig({
         allowAsProps: true,
         customValidators: []
       }
-    ],
-
-    // react-refresh
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true }
     ],
 
     // jsx-a11y

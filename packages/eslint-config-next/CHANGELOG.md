@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-next
 
+## 0.0.2
+
+### Patch Changes
+
+- remove react-refresh
+
 ## 0.0.1
 
 ### Patch Changes
