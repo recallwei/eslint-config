@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.16
+
+### Patch Changes
+
+- remove rule
+
 ## 1.0.15
 
 ### Patch Changes
