@@ -17,7 +17,7 @@
     "typescript"
   ],
   "files": [
-    "src/*"
+    "src"
   ],
   "main": "src/index.js",
   "peerDependencies": {
