@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-next
 
+## 0.0.4
+
+### Patch Changes
+
+- update react related rules
+
 ## 0.0.3
 
 ### Patch Changes

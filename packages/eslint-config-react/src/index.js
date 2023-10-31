@@ -39,6 +39,7 @@ module.exports = defineConfig({
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
@@ -96,7 +97,8 @@ module.exports = defineConfig({
               sourceType: 'module'
             },
             rules: {
-              'no-undef': 'off'
+              'no-undef': 'off',
+              'react/jsx-no-undef': 'off' // 由 TypeScript 静态检查
             }
           }
         ]

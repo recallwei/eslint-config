@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react-native
 
+## 0.0.12
+
+### Patch Changes
+
+- update react related rules
+
 ## 0.0.11
 
 ### Patch Changes

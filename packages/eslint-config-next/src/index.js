@@ -96,7 +96,8 @@ module.exports = defineConfig({
               sourceType: 'module'
             },
             rules: {
-              'no-undef': 'off'
+              'no-undef': 'off',
+              'react/jsx-no-undef': 'off' // 由 TypeScript 静态检查
             }
           }
         ]
