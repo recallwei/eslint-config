@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react-native
 
+## 0.0.13
+
+### Patch Changes
+
+- update typescript eslint config
+
 ## 0.0.12
 
 ### Patch Changes

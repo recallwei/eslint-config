@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-react
 
+## 1.0.16
+
+### Patch Changes
+
+- update typescript eslint config
+
 ## 1.0.15
 
 ### Patch Changes

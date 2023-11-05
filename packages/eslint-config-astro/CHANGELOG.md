@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.20
+
+### Patch Changes
+
+- update typescript eslint config
+
 ## 1.0.19
 
 ### Patch Changes

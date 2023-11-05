@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-astro",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Astro + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -35,7 +35,7 @@
     "eslint-define-config": "^1.24.1",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",

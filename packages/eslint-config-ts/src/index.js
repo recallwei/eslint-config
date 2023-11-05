@@ -25,33 +25,18 @@ module.exports = defineConfig({
     'eslint:recommended',
     'airbnb-base',
     'airbnb-typescript/base',
-    'plugin:@typescript-eslint/recommended-type-checked',
-    'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
     'prettier'
   ],
-  plugins: [
-    '@typescript-eslint',
-    'simple-import-sort',
-    'import',
-    'unused-imports'
-  ],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: [
-          '.js',
-          '.cjs',
-          '.mjs',
-          '.ts',
-          '.cts',
-          '.mts',
-          '.tsx',
-          '.d.ts'
-        ]
+        extensions: ['.js', '.cjs', '.mjs', '.ts', '.cts', '.mts', '.tsx', '.d.ts']
       }
     }
   },
@@ -97,13 +82,7 @@ module.exports = defineConfig({
       'warn',
       {
         props: true,
-        ignorePropertyModificationsFor: [
-          'target',
-          'descriptor',
-          'req',
-          'request',
-          'args'
-        ]
+        ignorePropertyModificationsFor: ['target', 'descriptor', 'req', 'request', 'args']
       }
     ], // 允许修改函数参数，但是会有警告
 

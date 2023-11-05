@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-docusaurus
 
+## 1.0.11
+
+### Patch Changes
+
+- update typescript eslint config
+
 ## 1.0.10
 
 ### Patch Changes

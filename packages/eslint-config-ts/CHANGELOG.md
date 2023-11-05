@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-ts
 
+## 1.0.13
+
+### Patch Changes
+
+- update typescript eslint config
+
 ## 1.0.12
 
 ### Patch Changes
