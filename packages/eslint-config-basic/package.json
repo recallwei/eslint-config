@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-basic",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Basic JavaScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -19,8 +19,8 @@
   ],
   "main": "src/index.js",
   "peerDependencies": {
-    "eslint": ">=7.4.0",
-    "typescript": ">=3.9"
+    "eslint": ">=8.53.0",
+    "typescript": ">=5.0"
   },
   "dependencies": {
     "eslint-config-airbnb-base": "^15.0.0",
