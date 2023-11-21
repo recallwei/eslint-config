@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-react-native",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "React Native + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -22,17 +22,17 @@
   ],
   "main": "src/index.js",
   "peerDependencies": {
-    "eslint": ">=8.53.0",
+    "eslint": ">=8.54.0",
     "typescript": ">=5.0"
   },
   "dependencies": {
     "@react-native/eslint-plugin": "^0.74.0",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-define-config": "^1.24.1",
+    "eslint-define-config": "^2.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsx-a11y": "6.8.0",
@@ -41,7 +41,8 @@
     "eslint-plugin-react-native": "^4.1.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "@tanstack/eslint-plugin-query": "^5.8.4"
   },
   "license": "MIT"
 }
