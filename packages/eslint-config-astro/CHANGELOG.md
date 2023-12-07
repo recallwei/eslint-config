@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-astro
 
+## 1.0.23
+
+### Patch Changes
+
+- update deps
+
 ## 1.0.22
 
 ### Patch Changes

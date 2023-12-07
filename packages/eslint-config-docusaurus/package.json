@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-docusaurus",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Docusaurus + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -22,23 +22,23 @@
   ],
   "main": "src/index.js",
   "peerDependencies": {
-    "eslint": ">=8.54.0",
+    "eslint": ">=8.55.0",
     "typescript": ">=5.0"
   },
   "dependencies": {
-    "@docusaurus/eslint-plugin": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
+    "@docusaurus/eslint-plugin": "^3.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-define-config": "^2.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0"
   },
