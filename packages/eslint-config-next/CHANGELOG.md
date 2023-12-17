@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-next
 
+## 0.0.9
+
+### Patch Changes
+
+- update deps
+
 ## 0.0.8
 
 ### Patch Changes
