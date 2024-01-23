@@ -1,6 +1,5 @@
 const fs = require('node:fs')
 const { join } = require('node:path')
-const { defineConfig } = require('eslint-define-config')
 
 const tsconfig =
   process.env.ESLINT_TSCONFIG ||
@@ -12,7 +11,8 @@ const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
 const tsconfigRootDir = process.cwd()
 
-module.exports = defineConfig({
+/** @type {import("eslint").Linter.Config} */
+module.exports = {
   root: true,
   env: {
     node: true,
@@ -34,26 +34,11 @@ module.exports = defineConfig({
     'plugin:vue/vue3-recommended',
     'prettier'
   ],
-  plugins: [
-    '@typescript-eslint',
-    'simple-import-sort',
-    'import',
-    'unused-imports'
-  ],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: {
-        extensions: [
-          '.js',
-          '.cjs',
-          '.mjs',
-          '.ts',
-          '.cts',
-          '.mts',
-          '.tsx',
-          '.d.ts',
-          '.vue'
-        ]
+        extensions: ['.js', '.cjs', '.mjs', '.ts', '.cts', '.mts', '.tsx', '.d.ts', '.vue']
       }
     }
   },
@@ -110,13 +95,7 @@ module.exports = defineConfig({
       'warn',
       {
         props: true,
-        ignorePropertyModificationsFor: [
-          'target',
-          'descriptor',
-          'req',
-          'request',
-          'args'
-        ]
+        ignorePropertyModificationsFor: ['target', 'descriptor', 'req', 'request', 'args']
       }
     ], // 允许修改函数参数，但是会有警告
 
@@ -184,4 +163,4 @@ module.exports = defineConfig({
     'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
     'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
   }
-})
+}

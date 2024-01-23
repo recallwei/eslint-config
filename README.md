@@ -8,6 +8,8 @@ See the publish guide [here](./DEVELOPMENT.md).
 - [x] Based on [Airbnb JavaScript Style](https://github.com/airbnb/javascript)
 - [x] Auto sort `import` and `export`
 - [x] Tailwind CSS auto sort
+- [x] Turborepo support
+- [x] Storybook support
 - [x] Support multiple frameworks
   - [x] JavaScript
   - [x] TypeScript

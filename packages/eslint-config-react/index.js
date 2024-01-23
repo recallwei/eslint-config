@@ -1,6 +1,5 @@
 const fs = require('node:fs')
 const { join } = require('node:path')
-const { defineConfig } = require('eslint-define-config')
 
 const tsconfig =
   process.env.ESLINT_TSCONFIG ||
@@ -17,7 +16,8 @@ const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce((acc
   return acc
 }, {})
 
-module.exports = defineConfig({
+/** @type {import("eslint").Linter.Config} */
+module.exports = {
   root: true,
   env: {
     node: true,
@@ -27,13 +27,16 @@ module.exports = defineConfig({
   },
   reportUnusedDisableDirectives: true,
   extends: [
-    'plugin:@docusaurus/recommended',
+    'plugin:tailwindcss/recommended',
     'eslint:recommended',
     'airbnb',
+    'airbnb-typescript',
     'airbnb/hooks',
-    'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:@tanstack/eslint-plugin-query/recommended',
+    'eslint-config-turbo',
+    'plugin:storybook/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
@@ -98,8 +101,9 @@ module.exports = defineConfig({
       'warn',
       {
         props: true,
-        ignorePropertyModificationsFor: ['target', 'descriptor', 'req', 'request', 'args']
-      }
+        ignorePropertyModificationsFor: ['target', 'descriptor', 'req', 'request', 'args', 'draft'],
+        ignorePropertyModificationsForRegex: ['^item', 'Item$']
+      } // useImmer 需要直接修改参数值，不受此限制，尽量通过 draft = xxx 的方式修改
     ], // 允许修改函数参数，但是会有警告
 
     // eslint-plugin-unused-imports
@@ -126,7 +130,14 @@ module.exports = defineConfig({
     'import/no-absolute-path': 'off', // 允许导入绝对路径
     'import/no-duplicates': 'error', // 禁止重复导入
     'import/extensions': 'off', // 允许导入时带文件扩展名
-    'import/no-extraneous-dependencies': 'off', // TODO: Docusaurus swizzle 可能会用到没有使用的依赖
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        peerDependencies: true,
+        optionalDependencies: false
+      }
+    ], // 允许 devDependencies，peerDependencies，不允许 optionalDependencies
     'import/no-mutable-exports': 'error', // 禁止导出 let, var 声明的变量
     'import/no-self-import': 'error', // 禁止自导入
     'import/prefer-default-export': 'off', // 仅导出一个变量时，不要求默认导出
@@ -147,7 +158,7 @@ module.exports = defineConfig({
     // react
     'react/destructuring-assignment': 'off', // 允许使用解构赋值
     'react/prop-types': 'off', // 不必校验 props
-    'react/require-default-props': 'off',
+    'react/require-default-props': 'off', // 不必要求默认 props
     'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
     'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
     'react/jsx-props-no-spreading': 'off', // 允许使用 ... 扩展 props
@@ -166,6 +177,11 @@ module.exports = defineConfig({
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
     // jsx-a11y
-    ...a11yOff // 禁用所有 jsx-a11y 规则
+    ...a11yOff, // 禁用所有 jsx-a11y 规则
+
+    // tailwindcss
+    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
+    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
+    'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
   }
-})
+}

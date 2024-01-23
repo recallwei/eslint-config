@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-docusaurus",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Docusaurus + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -17,22 +17,18 @@
     "react",
     "typescript"
   ],
-  "files": [
-    "src"
-  ],
-  "main": "src/index.js",
+  "main": "index.js",
   "peerDependencies": {
     "eslint": ">=8.56.0",
-    "typescript": ">=5.0"
+    "typescript": ">=5.0.0"
   },
   "dependencies": {
-    "@docusaurus/eslint-plugin": "^3.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
+    "@docusaurus/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-define-config": "^2.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",

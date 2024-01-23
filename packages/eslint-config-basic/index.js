@@ -1,6 +1,5 @@
-const { defineConfig } = require('eslint-define-config')
-
-module.exports = defineConfig({
+/** @type {import("eslint").Linter.Config} */
+module.exports = {
   root: true,
   env: {
     es6: true,
@@ -34,13 +33,8 @@ module.exports = defineConfig({
       'warn',
       {
         props: true,
-        ignorePropertyModificationsFor: [
-          'target',
-          'descriptor',
-          'req',
-          'request',
-          'args'
-        ]
+        ignorePropertyModificationsFor: ['target', 'descriptor', 'req', 'request', 'args', 'draft'],
+        ignorePropertyModificationsForRegex: ['^item', 'Item$']
       }
     ], // 允许修改函数参数，但是会有警告
 
@@ -80,4 +74,4 @@ module.exports = defineConfig({
     'import/no-self-import': 'error', // 禁止自导入
     'import/prefer-default-export': 'off' // 仅导出一个变量时，不要求默认导出
   }
-})
+}

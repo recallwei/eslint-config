@@ -7,6 +7,8 @@
 - [x] `import`、`export` auto sort
 - [x] TailwindCSS class name auto sort, merge
 - [x] Resolving conflicts between `ESLint` and `Prettier`
+- [x] Support storybook
+- [x] Support using in Turborepo
 - [x] Support defining `ESLINT_TSCONFIG` in the env to specify the `tsconfig.json` file path used by ESLint
 - [x] Auto check `tsconfig.json`、`tsconfig.eslint.json` file in the project root directory
 

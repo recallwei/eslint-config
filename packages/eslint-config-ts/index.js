@@ -1,6 +1,5 @@
 const fs = require('node:fs')
 const { join } = require('node:path')
-const { defineConfig } = require('eslint-define-config')
 
 const tsconfig =
   process.env.ESLINT_TSCONFIG ||
@@ -12,12 +11,8 @@ const isTSExist = fs.existsSync(join(process.cwd(), tsconfig))
 
 const tsconfigRootDir = process.cwd()
 
-const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce((acc, rule) => {
-  acc[`jsx-a11y/${rule}`] = 'off'
-  return acc
-}, {})
-
-module.exports = defineConfig({
+/** @type {import("eslint").Linter.Config} */
+module.exports = {
   root: true,
   env: {
     node: true,
@@ -27,21 +22,17 @@ module.exports = defineConfig({
   },
   reportUnusedDisableDirectives: true,
   extends: [
-    'next/core-web-vitals',
-    'plugin:tailwindcss/recommended',
     'eslint:recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
+    'airbnb-base',
+    'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
     'prettier'
   ],
-  plugins: ['@typescript-eslint', 'react', 'simple-import-sort', 'import', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: {
@@ -76,8 +67,7 @@ module.exports = defineConfig({
               sourceType: 'module'
             },
             rules: {
-              'no-undef': 'off',
-              'react/jsx-no-undef': 'off' // 由 TypeScript 静态检查
+              'no-undef': 'off'
             }
           }
         ]
@@ -143,32 +133,6 @@ module.exports = defineConfig({
         functions: false,
         classes: false
       }
-    ],
-
-    // react
-    'react/destructuring-assignment': 'off', // 允许使用解构赋值
-    'react/prop-types': 'off', // 不必校验 props
-    'react/require-default-props': 'off', // 不必要求默认 props
-    'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
-    'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
-    'react/jsx-props-no-spreading': 'off', // 允许使用 ... 扩展 props
-    'react/jsx-filename-extension': ['warn', { extensions: ['jsx', '.tsx'] }], // JSX 文件使用 .jsx 或 .tsx 扩展名
-    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }], // 允许使用 <></> 包裹表达式，如 <>{children}</>
-    'react/no-array-index-key': 'off', // 允许使用数组索引作为 key
-    'react/no-unstable-nested-components': [
-      'error',
-      {
-        allowAsProps: true,
-        customValidators: []
-      }
-    ],
-
-    // jsx-a11y
-    ...a11yOff, // 禁用所有 jsx-a11y 规则
-
-    // tailwindcss
-    'tailwindcss/classnames-order': 'error', // TailwindCSS 类名排序
-    'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
-    'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
+    ]
   }
-})
+}

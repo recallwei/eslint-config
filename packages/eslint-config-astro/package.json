@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-astro",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Astro + React + TypeScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {
@@ -17,22 +17,18 @@
     "react",
     "typescript"
   ],
-  "files": [
-    "src"
-  ],
-  "main": "src/index.js",
+  "main": "index.js",
   "peerDependencies": {
     "eslint": ">=8.56.0",
-    "typescript": ">=5.0"
+    "typescript": ">=5.0.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "astro-eslint-parser": "^0.16.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "astro-eslint-parser": "^0.16.2",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-define-config": "^2.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
@@ -40,9 +36,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-tailwindcss": "^3.14.0",
     "eslint-plugin-unused-imports": "^3.0.0",
-    "prettier-plugin-astro": "^0.12.2"
+    "prettier-plugin-astro": "^0.13.0"
   },
   "license": "MIT"
 }

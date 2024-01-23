@@ -1,6 +1,5 @@
 const fs = require('node:fs')
 const { join } = require('node:path')
-const { defineConfig } = require('eslint-define-config')
 
 const tsconfig =
   process.env.ESLINT_TSCONFIG ||
@@ -17,7 +16,8 @@ const a11yOff = Object.keys(require('eslint-plugin-jsx-a11y').rules).reduce((acc
   return acc
 }, {})
 
-module.exports = defineConfig({
+/** @type {import("eslint").Linter.Config} */
+module.exports = {
   root: true,
   env: {
     node: true,
@@ -30,11 +30,10 @@ module.exports = defineConfig({
     'plugin:tailwindcss/recommended',
     'eslint:recommended',
     'airbnb',
-    'airbnb-typescript',
     'airbnb/hooks',
+    'airbnb-typescript/base',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:@tanstack/eslint-plugin-query/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:import/errors',
@@ -52,7 +51,7 @@ module.exports = defineConfig({
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.cjs', '.mjs', '.ts', '.cts', '.mts', '.tsx', '.d.ts']
+        extensions: ['.js', '.cjs', '.mjs', '.ts', '.cts', '.mts', '.tsx', '.d.ts', '.astro']
       }
     }
   },
@@ -88,7 +87,27 @@ module.exports = defineConfig({
             }
           }
         ]
-      : [])
+      : []),
+    {
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
+        project: [tsconfig],
+        tsconfigRootDir,
+        ecmaVersion: 'latest',
+        sourceType: 'module'
+      },
+      globals: {
+        Astro: 'readonly'
+      },
+      rules: {
+        'react/no-unknown-property': 'off', // .astro 中无须校验未知属性
+        'react/jsx-filename-extension': [1, { extensions: ['.astro'] }],
+        'consistent-return': 'off' // TODO: 如何在顶层返回 Astro 组件
+      }
+    }
   ],
   rules: {
     quotes: ['error', 'single'], // 强制使用单引号
@@ -155,7 +174,7 @@ module.exports = defineConfig({
     // react
     'react/destructuring-assignment': 'off', // 允许使用解构赋值
     'react/prop-types': 'off', // 不必校验 props
-    'react/require-default-props': 'off', // 不必要求默认 props
+    'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off', // React 17 后不需要引入 React
     'react/jsx-uses-react': 'off', // React 17 后不需要引入 React
     'react/jsx-props-no-spreading': 'off', // 允许使用 ... 扩展 props
@@ -169,6 +188,7 @@ module.exports = defineConfig({
         customValidators: []
       }
     ],
+    'react/no-invalid-html-attribute': 'off', // 无须校验无效的 HTML 属性，比如 rel 的 prefetch
 
     // react-refresh
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
@@ -181,4 +201,4 @@ module.exports = defineConfig({
     'tailwindcss/enforces-shorthand': 'error', // TailwindCSS 简写合并
     'tailwindcss/no-custom-classname': 'off' // TailwindCSS 中允许自定义类名
   }
-})
+}
