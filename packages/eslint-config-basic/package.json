@@ -1,6 +1,6 @@
 {
   "name": "@brucesong/eslint-config-basic",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Basic JavaScript ESLint configuration.",
   "author": "Bruce Song <recall4056@gmail.com> (https://github.com/recallwei/)",
   "repository": {

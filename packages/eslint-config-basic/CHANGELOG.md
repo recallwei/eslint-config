@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-basic
 
+## 1.0.15
+
+### Patch Changes
+
+- update deps
+
 ## 1.0.14
 
 ### Patch Changes

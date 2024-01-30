@@ -1,5 +1,11 @@
 # @brucesong/eslint-config-vue
 
+## 1.0.22
+
+### Patch Changes
+
+- update deps
+
 ## 1.0.21
 
 ### Patch Changes
